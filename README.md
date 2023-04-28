@@ -14,13 +14,15 @@ example - examples
 
 ## Quick start
 
-- how to use
-
-- how to development
+- [how to use](./doc/use/README.md)
+- [how to development](./doc/dev/README.md)
 
 ## Issues && Communicate
+https://github.com/myuer/my-website/issues
 
 ## About me
 https://myuer.github.io/index.html
 
-reference：https://www.imooc.com/article/28240
+## Reference
+https://www.imooc.com/article/28240
+Thanks 双越!!
