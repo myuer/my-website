@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .demo1-wrapper {
+        display: flex;
+        border: 1px solid #ddd;
+        width: 300px;
+      }
+      .name,
+      .btn {
+        background-color: #f0eff0;
+        padding: 10px;
+        flex: 1;
+        text-align: center;
+      }
+      .demo1-wrapper input {
+        border: none;
+        outline: none;
+      }
+
+      form div label {
+        text-align: right;
+        flex: 0 0 150px;
+      }
+
+      form div {
+        display: flex;
+        flex: 1;
+        /* height: 40px; */
+        align-items: center;
+      }
+      form input {
+        width: 200px;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+    </style>
+
+    <style>
+      html {
+        font-size: 10px;
+      }
+      p {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo1-wrapper">
+      <label class="name">姓名</label>
+      <input type="text" />
+      <label class="btn">GO</label>
+    </div>
+
+    <form class="demo2-wrapper">
+      <div><label for="">姓名：</label><input type="text" /></div>
+      <div><label for="">请输入密码：</label><input type="text" /></div>
+      <div><label for="">请再次输入密码：</label><input type="text" /></div>
+    </form>
+
+    <div>
+      <p>
+        改变窗口大小，改变字体大小
+      </p>
+    </div>
+    <script>
+      const clientWidthListener = () => {
+        let width = document.documentElement.clientWidth; // 获取设备的宽度
+        let fontSize = 16 * (width / 375) > 40 ? 40 + "px" : 16 * (width / 375) + "px";
+        document.documentElement.style.fontSize = fontSize;
+      };
+
+      window.addEventListener("load", clientWidthListener);
+      window.addEventListener("resize", clientWidthListener);
+    </script>
+  </body>
+</html>

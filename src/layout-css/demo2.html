@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- initial-scale=1.0 默认情况下的原始尺寸 -->
+    <!-- user-scalable=no 不使用浏览器自身的缩放 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./demo2/common.css">
+    <link
+      rel="stylesheet"
+      href="./demo2/big.css"
+      media="(min-device-width: 1000px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./demo2/small.css"
+      media="(min-device-width: 400px) and (max-device-width: 600px)"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="layout">
+        <div class="top"></div>
+        <div class="main">
+          <ul class="menu">
+            <li v-for="(item, index) in menus" :key="index">{{item}}</li>
+          </ul>
+          <ul class="content">
+            <li v-for="(item, index) in pics" :key="index" class="pic">
+              {{item}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const App = {
+      data() {
+        const menus = Array.from({ length: 6 }, (v, k) => k).map(
+          (data, i) => "分类" + (i + 1)
+        );
+        const pics = Array.from({ length: 9 }, (v, k) => k).map(
+          (data, i) => "图片" + (i + 1)
+        );
+        return {
+          menus,
+          pics,
+        };
+      },
+    };
+    const app = Vue.createApp(App);
+    app.mount("#app");
+  </script>
+</html>

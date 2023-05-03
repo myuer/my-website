@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./demo3/index.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <div class="top">
+            <img src="https://www.imooc.com/static/img/index/logo2020.png" alt="">
+        </div>
+        <div class="main">
+            <ul>
+                <li v-for="(item, index) in datalist" :key="index" class="course">
+                    <img :src="item.imgUrl" alt="">
+                    <div class="title">
+                        {{item.name}}
+                    </div>
+                    <div class="cart"><i :class="item.icon"></i></div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div class="home">
+                <i class="fa fa-home"></i>
+            </div>
+            <div class="cart">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+     const App = {
+      data() {
+        const imgUrl = `https://img0.baidu.com/it/u=3425868493,3104015061&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1683219600&t=587db52e8d1cb8d9ff38a2686f75f3af`;
+        const datalist = Array.from({length: 30}, (v,k)=> k).map(item => ({name: '数据可视化，打造前端差异化竞争力,数据可视化，打造前端差异化竞争力,数据可视化,打造前端差异化竞争力', icon: 'fa fa-shopping-cart', imgUrl}))
+        return {
+            datalist
+        };
+      },
+    };
+    const app = Vue.createApp(App);
+    app.mount("#app");
+</script>
+<script>
+    const clientWidthListener = () => {
+      let width = document.documentElement.clientWidth; // 获取设备的宽度
+      let fontSize = 16 * (width / 375) > 40 ? 40 + "px" : 16 * (width / 375) + "px";
+      document.documentElement.style.fontSize = fontSize;
+    };
+
+    window.addEventListener("load", clientWidthListener);
+    window.addEventListener("resize", clientWidthListener);
+  </script>
+</html>

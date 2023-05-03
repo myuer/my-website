@@ -1,0 +1,19 @@
+#app .layout {
+    width: 100%;
+}
+
+.layout .main {
+    flex-direction: column;
+}
+
+.layout .main .menu{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.layout .main .menu li{
+    width: 33%;
+    border-right: 1px solid #fff;
+}
+.layout .main .content {
+    padding: 0 10px 10px 10px;
+}
